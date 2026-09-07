@@ -6,10 +6,10 @@
   --panel-line: #232c3d;
   --text: #edeff5;
   --text-muted: #8a93a6;
-  --coral: #ff4b5c;
-  --coral-dim: rgba(255, 75, 92, 0.14);
-  --mint: #4fd8b0;
-  --max-width: 1040px;
+  --accent: #4f8ae3;
+  --accent-dim: rgba(79, 138, 227, 0.16);
+  --accent-2: #e0a33f;
+  --max-width: 1240px;
 }
 
 * { box-sizing: border-box; }
@@ -79,7 +79,7 @@ nav.site-nav .wrap {
 .nav-links a {
   display: inline-block;
   padding: 9px 16px;
-  border-radius: 8px;
+  border-radius: 2px;
   background: var(--panel);
   color: var(--text-muted);
   font-size: 0.85rem;
@@ -89,13 +89,13 @@ nav.site-nav .wrap {
 }
 
 .nav-links a:hover {
-  background: var(--coral-dim);
-  color: var(--coral);
+  background: var(--accent-dim);
+  color: var(--accent);
 }
 
 .nav-links a.active {
-  background: var(--coral-dim);
-  color: var(--coral);
+  background: var(--accent-dim);
+  color: var(--accent);
 }
 
 /* ---------- Hero (home) ---------- */
@@ -105,8 +105,8 @@ nav.site-nav .wrap {
 }
 
 .hero-panel {
-  border: 1px solid var(--coral);
-  border-radius: 12px;
+  border: 1px solid var(--accent);
+  border-radius: 0;
   padding: 40px;
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
@@ -116,7 +116,7 @@ nav.site-nav .wrap {
 }
 
 .hero-photo {
-  border-radius: 8px;
+  border-radius: 2px;
   overflow: hidden;
   aspect-ratio: 4 / 5;
   background: #0e1420;
@@ -136,7 +136,7 @@ nav.site-nav .wrap {
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
 
 .hero-text .eyebrow {
-  color: var(--coral);
+  color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -167,7 +167,7 @@ nav.site-nav .wrap {
   color: var(--text-muted);
   font-size: 0.78rem;
   padding: 6px 12px;
-  border-radius: 6px;
+  border-radius: 2px;
 }
 
 .button-row { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -175,7 +175,7 @@ nav.site-nav .wrap {
 .btn {
   display: inline-block;
   padding: 12px 22px;
-  border-radius: 8px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 0.9rem;
   transition: transform 0.1s ease, opacity 0.15s ease;
@@ -184,8 +184,8 @@ nav.site-nav .wrap {
 .btn:hover { opacity: 0.88; }
 
 .btn-primary {
-  background: var(--mint);
-  color: #06231b;
+  background: var(--accent-2);
+  color: #1a1206;
 }
 
 .btn-secondary {
@@ -207,7 +207,7 @@ nav.site-nav .wrap {
   gap: 22px;
 }
 
-.game-card { position: relative; border-radius: 10px; overflow: hidden; border: 1px solid var(--panel-line); }
+.game-card { position: relative; border-radius: 2px; overflow: hidden; border: 1px solid var(--panel-line); }
 
 .game-card .thumb {
   aspect-ratio: 3 / 4;
@@ -230,7 +230,7 @@ nav.site-nav .wrap {
 
 .game-card .caption h3 {
   font-size: 1.05rem;
-  color: var(--coral);
+  color: var(--accent);
   margin-bottom: 4px;
 }
 
@@ -260,7 +260,7 @@ nav.site-nav .wrap {
 .entry:first-child { border-top: none; }
 .entry .when { color: var(--text-muted); font-size: 0.85rem; }
 .entry h3 { font-size: 1.2rem; margin-bottom: 3px; }
-.entry .role-line { color: var(--coral); font-size: 0.88rem; margin-bottom: 10px; font-weight: 600; }
+.entry .role-line { color: var(--accent); font-size: 0.88rem; margin-bottom: 10px; font-weight: 600; }
 .entry p { color: var(--text-muted); max-width: 62ch; margin: 0; }
 
 /* ---------- Art gallery ---------- */
@@ -271,7 +271,7 @@ nav.site-nav .wrap {
   aspect-ratio: 1;
   background: #0e1420;
   border: 1px solid var(--panel-line);
-  border-radius: 8px;
+  border-radius: 2px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -291,9 +291,9 @@ nav.site-nav .wrap {
   display: inline-block;
   margin: 4px 0 32px;
   padding: 12px 22px;
-  background: var(--mint);
-  color: #06231b;
-  border-radius: 8px;
+  background: var(--accent-2);
+  color: #1a1206;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 0.9rem;
 }
@@ -302,7 +302,7 @@ nav.site-nav .wrap {
   width: 100%;
   height: 900px;
   border: 1px solid var(--panel-line);
-  border-radius: 10px;
+  border-radius: 2px;
   background: var(--panel);
 }
 
@@ -328,6 +328,6 @@ footer { padding: 44px 0 64px; color: var(--text-muted); font-size: 0.85rem; }
 }
 
 a:focus-visible, .btn:focus-visible {
-  outline: 2px solid var(--mint);
+  outline: 2px solid var(--accent-2);
   outline-offset: 2px;
 }
