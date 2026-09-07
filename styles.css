@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.cdnfonts.com/css/white-rabbit');
 
 :root {
   --bg: #0b0f1a;
@@ -6,10 +7,12 @@
   --panel-line: #232c3d;
   --text: #edeff5;
   --text-muted: #8a93a6;
-  --accent: #4f8ae3;
-  --accent-dim: rgba(79, 138, 227, 0.16);
+  --accent: #6ea0f0;
+  --accent-dim: rgba(110, 160, 240, 0.16);
   --accent-2: #e0a33f;
-  --max-width: 1240px;
+  --max-width: 1700px;
+  --font-heading: 'Audiowide', sans-serif;
+  --font-body: 'white rabbit by alice', 'Work Sans', sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -20,13 +23,13 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Work Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
 }
 
 h1, h2, h3, .display {
-  font-family: 'Anton', sans-serif;
+  font-family: var(--font-heading);
   font-weight: 400;
   letter-spacing: 0.01em;
   margin: 0;
@@ -39,7 +42,7 @@ img { max-width: 100%; display: block; }
 .wrap {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 24px;
 }
 
 /* ---------- Nav ---------- */
@@ -56,16 +59,30 @@ nav.site-nav {
 nav.site-nav .wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   height: 72px;
-  gap: 24px;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-logo {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.nav-logo img { width: 100%; height: 100%; object-fit: contain; }
+
 .nav-name {
-  font-family: 'Anton', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.2rem;
   color: var(--text);
   letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .nav-links {
@@ -78,13 +95,16 @@ nav.site-nav .wrap {
 
 .nav-links a {
   display: inline-block;
-  padding: 9px 16px;
+  padding: 8px 14px;
   border-radius: 2px;
+  border: 1px solid var(--accent);
   background: var(--panel);
   color: var(--text-muted);
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 400;
   letter-spacing: 0.02em;
+  text-transform: uppercase;
   transition: background 0.15s ease, color 0.15s ease;
 }
 
@@ -147,6 +167,7 @@ nav.site-nav .wrap {
   font-size: 3rem;
   line-height: 1.05;
   margin-bottom: 18px;
+  text-transform: uppercase;
 }
 
 .hero-text p.bio {
@@ -318,8 +339,9 @@ footer { padding: 44px 0 64px; color: var(--text-muted); font-size: 0.85rem; }
   .art-grid { grid-template-columns: repeat(2, 1fr); }
   .entry { grid-template-columns: 1fr; gap: 6px; }
   nav.site-nav .wrap { flex-wrap: wrap; height: auto; padding: 14px 24px; }
-  .nav-links { gap: 6px; }
-  .nav-links a { padding: 7px 12px; font-size: 0.78rem; }
+  .nav-left { gap: 12px; }
+  .nav-links { gap: 6px; flex-wrap: wrap; }
+  .nav-links a { padding: 6px 11px; font-size: 0.8rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
