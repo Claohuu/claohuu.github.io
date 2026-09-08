@@ -332,18 +332,46 @@ nav.site-nav .wrap {
   transition: background 0.15s ease;
 }
 
+/* the extra points at the top corners round them off; the -1px bottom laps
+   the outline into the block's border so no hairline gap shows at the join */
 .folder-tab::before {
-  inset: 0;
+  inset: 0 0 -1px;
   z-index: -2;
   background: var(--accent-2);
-  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  clip-path: polygon(
+    20.5px 0,
+    calc(100% - 20.5px) 0,
+    calc(100% - 16.6px) 0.5px,
+    calc(100% - 13.6px) 2.1px,
+    calc(100% - 11.3px) 4.6px,
+    calc(100% - 9.9px) 8.2px,
+    100% 100%,
+    0 100%,
+    9.9px 8.2px,
+    11.3px 4.6px,
+    13.6px 2.1px,
+    16.6px 0.5px
+  );
 }
 
 .folder-tab::after {
   inset: 3px 3px 0;
   z-index: -1;
   background: var(--accent-2);
-  clip-path: polygon(11.3px 0, calc(100% - 11.3px) 0, 100% 100%, 0 100%);
+  clip-path: polygon(
+    17.5px 0,
+    calc(100% - 17.5px) 0,
+    calc(100% - 14.7px) 0.4px,
+    calc(100% - 12.5px) 1.5px,
+    calc(100% - 10.8px) 3.4px,
+    calc(100% - 9.7px) 6px,
+    100% 100%,
+    0 100%,
+    9.7px 6px,
+    10.8px 3.4px,
+    12.5px 1.5px,
+    14.7px 0.4px
+  );
 }
 
 .folder-tab:hover::before,
