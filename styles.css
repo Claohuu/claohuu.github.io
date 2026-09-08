@@ -2,17 +2,17 @@
 
 :root {
   --bg: #161a19;
-  --panel: #202523;
-  --panel-line: #333b39;
-  --tab-bg: #111514;
-  --sunken: #1a1e1d;
+  --panel: #1c2124;
+  --panel-line: #2f373b;
+  --tab-bg: #101416;
+  --sunken: #181c1f;
   --folder-ink: #331b26;
   --block-inset: 62px;
   --text: #ecefee;
   --text-muted: #8d9694;
-  --accent: #b4a6d6;
-  --accent-dim: rgba(180, 166, 214, 0.16);
-  --accent-2: #cfa3b4;
+  --accent: #b3a1de;
+  --accent-dim: rgba(179, 161, 222, 0.16);
+  --accent-2: #d699b0;
   --max-width: 1700px;
   --font-heading: 'Audiowide', sans-serif;
   --font-body: 'Space Mono', 'Work Sans', monospace;
@@ -200,23 +200,14 @@ nav.site-nav .wrap {
   display: inline-block;
   padding: 12px 22px;
   border-radius: 2px;
+  background: var(--accent-2);
+  color: var(--folder-ink);
   font-weight: 600;
   font-size: 0.9rem;
-  transition: transform 0.1s ease, opacity 0.15s ease;
+  transition: opacity 0.15s ease;
 }
 
 .btn:hover { opacity: 0.88; }
-
-.btn-primary {
-  background: var(--accent-2);
-  color: var(--folder-ink);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid var(--panel-line);
-}
 
 /* ---------- Section headings ---------- */
 
@@ -376,7 +367,7 @@ nav.site-nav .wrap {
 }
 
 .folder-tab:hover::before,
-.folder-tab:hover::after { background: #ddb4c3; }
+.folder-tab:hover::after { background: #e2b6c7; }
 
 .folder-tab[aria-selected="true"] {
   z-index: 4;
@@ -578,7 +569,7 @@ nav.site-nav .wrap {
   padding: 0;
   border: 2px solid var(--accent);
   border-radius: 50%;
-  background: rgba(17, 21, 20, 0.85);
+  background: rgba(16, 20, 22, 0.85);
   backdrop-filter: blur(6px);
   color: var(--accent);
   cursor: pointer;
