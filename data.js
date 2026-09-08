@@ -68,6 +68,22 @@ const SITE_DATA = {
 
   experience: [
     {
+      role: "Gameplay Programming Intern",
+      org: "Aggro Crab",
+      when: "Jun 2026 – Oct 2026",
+      description: [
+        "Sole programming intern on an unannounced title. Designed a centralized entity manager that distributes visibility checks across staggered coroutine cycles, amortizing per-entity work over successive frames for a 25% increase in framerate.",
+        "Built a custom Unity editor tool that procedurally places prefabs along a spline, sampling positions at configurable density with surface-snapping raycasts and gizmo previews, replacing manual hand-placement.",
+        "Animated environmental assets with Blender shape keys, Shader Graph vertex-offset shaders, and rigged Unity Animator clips, then wired up the C# interaction logic and custom particle effects.",
+        "Playtested and reviewed builds for one of the largest PEAK updates — a Unity title with 10M+ copies sold — after which concurrent players reached the top 15 on Steam."
+      ],
+      skills: {
+        Languages: ["C#"],
+        Tools: ["Unity", "Blender", "Shader Graph", "Git"]
+      },
+      images: []
+    },
+    {
       role: "Undergraduate Research Assistant",
       org: "The Machine Agency, University of Washington",
       when: "Aug 2025 – Dec 2025",
