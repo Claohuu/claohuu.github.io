@@ -271,6 +271,7 @@ nav.site-nav .wrap {
 .page-header p { color: var(--text-muted); margin-top: 10px; max-width: 60ch; }
 
 /* line the page title up with the left edge of the block beneath it */
+.page-header.inset { padding-top: 34px; }
 .page-header.inset .wrap { padding-left: calc(24px + var(--block-inset)); }
 .art-grid { margin: 0 var(--block-inset); }
 
@@ -278,7 +279,7 @@ nav.site-nav .wrap {
 
 .folder-section {
   border-top: none;
-  padding-top: 14px;
+  padding-top: 0;
 }
 
 .folder-shell {
@@ -302,8 +303,6 @@ nav.site-nav .wrap {
 
 .folder-tabs::-webkit-scrollbar { display: none; }
 
-/* real borders (not a transformed shape) so the tab's outline is the same
-   3px as the block's and the two meet flush */
 .folder-tab {
   position: relative;
   z-index: 1;
@@ -311,33 +310,61 @@ nav.site-nav .wrap {
   appearance: none;
   cursor: pointer;
   margin: 0;
-  padding: 10px 28px 12px;
-  border: 3px solid var(--accent-2);
-  border-bottom: none;
-  border-radius: 9px 9px 0 0;
-  background: var(--accent-2);
+  padding: 11px 32px 13px;
+  border: 0;
+  background: none;
   color: var(--folder-ink);
   font-family: var(--font-heading);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: color 0.15s ease;
 }
 
-.folder-tab:hover { background: #eeb75a; border-color: #eeb75a; }
+/* the tapered tab is two clipped layers: ::before is the outline, ::after is
+   the fill inset by the outline's 3px. A transformed shape would scale the
+   border, so the outline is drawn as geometry instead. */
+.folder-tab::before,
+.folder-tab::after {
+  content: "";
+  position: absolute;
+  transition: background 0.15s ease;
+}
 
-/* the open tab shares the block's fill and outline, and hangs 3px over the
-   block's top border so its fill hides it — the two read as one shape */
-.folder-tab[aria-selected="true"],
-.folder-tab[aria-selected="true"]:hover {
+.folder-tab::before {
+  inset: 0;
+  z-index: -2;
+  background: var(--accent-2);
+  clip-path: polygon(12px 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+}
+
+.folder-tab::after {
+  inset: 3px 3px 0;
+  z-index: -1;
+  background: var(--accent-2);
+  clip-path: polygon(11.3px 0, calc(100% - 11.3px) 0, 100% 100%, 0 100%);
+}
+
+.folder-tab:hover::before,
+.folder-tab:hover::after { background: #eeb75a; }
+
+.folder-tab[aria-selected="true"] {
   z-index: 4;
-  margin-bottom: -3px;
-  padding-top: 13px;
-  padding-bottom: 15px;
-  background: var(--panel);
-  border-color: var(--accent);
+  padding-top: 14px;
+  padding-bottom: 16px;
   color: var(--text);
+}
+
+.folder-tab[aria-selected="true"]::before,
+.folder-tab[aria-selected="true"]:hover::before { background: var(--accent); }
+
+/* the fill runs 3px past the tab's base to erase the block's top border,
+   while the outline stops at it — so the strokes meet without overshooting */
+.folder-tab[aria-selected="true"]::after,
+.folder-tab[aria-selected="true"]:hover::after {
+  inset: 3px 3px -3px;
+  background: var(--panel);
 }
 
 .folder-body {
