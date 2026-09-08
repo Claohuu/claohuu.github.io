@@ -251,7 +251,17 @@ nav.site-nav .wrap {
   gap: 16px;
 }
 
-.game-card { position: relative; border-radius: 2px; overflow: hidden; border: 1px solid var(--panel-line); }
+.game-card {
+  display: block;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--panel-line);
+  transition: border-color 0.15s ease;
+}
+
+a.game-card:hover { border-color: var(--accent-2); }
+a.game-card:hover .caption h3 { color: var(--accent-2); }
 
 .game-card .thumb {
   aspect-ratio: 1;
@@ -708,7 +718,7 @@ footer { padding: 44px 0 64px; color: var(--text-muted); font-size: 0.85rem; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .nav-links a, .btn, .folder-tab, .folder-arrow, .contact-list a { transition: none; }
+  .nav-links a, .btn, .folder-tab, .folder-arrow, .contact-list a, .game-card { transition: none; }
   .scroll-cue { animation: none; }
 }
 

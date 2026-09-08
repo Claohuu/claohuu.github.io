@@ -22,8 +22,8 @@ function placeholderThumb(label) {
 function renderGames() {
   const row = document.getElementById("games-row");
   if (!row || !SITE_DATA.games) return;
-  row.innerHTML = SITE_DATA.games.map(game => `
-    <div class="game-card">
+  row.innerHTML = SITE_DATA.games.map(game => {
+    const inner = `
       <div class="thumb">
         ${game.image ? `<img src="${game.image}" alt="${game.title}"${game.crop ? ` style="object-position: ${game.crop}"` : ""}>` : placeholderThumb(game.title || "Game image")}
       </div>
@@ -32,8 +32,11 @@ function renderGames() {
         <p class="dev">${game.developer}</p>
         ${game.caption ? `<p>${game.caption}</p>` : ""}
       </div>
-    </div>
-  `).join("");
+    `;
+    return game.link
+      ? `<a class="game-card" href="${game.link}" target="_blank" rel="noopener">${inner}</a>`
+      : `<div class="game-card">${inner}</div>`;
+  }).join("");
 }
 
 function skillBoxes(skills) {

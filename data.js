@@ -17,35 +17,40 @@ const SITE_DATA = {
       developer: "Riot Games",
       caption: "",
       image: "assets/valorant.jpg",
-      crop: "center 35%"
+      crop: "center 35%",
+      link: "https://playvalorant.com/en-us/"
     },
     {
       title: "Death Stranding",
       developer: "Kojima Productions",
       caption: "",
       image: "assets/deathStranding.jpg",
-      crop: "center 40%"
+      crop: "center 40%",
+      link: "https://www.kojimaproductions.jp/index.php/en/death-stranding-dc"
     },
     {
       title: "Peak",
       developer: "Aggro Crab and Landfall Games",
       caption: "",
       image: "assets/peak.jpg",
-      crop: "center center"
+      crop: "center center",
+      link: "https://peakpeakpeak.com/"
     },
     {
       title: "Firewatch",
       developer: "Campo Santo",
       caption: "",
       image: "assets/firewatch.jpg",
-      crop: "center top"
+      crop: "center top",
+      link: "https://www.firewatchgame.com/"
     },
     {
       title: "Sons of the Forest",
       developer: "Endnight Games",
       caption: "",
       image: "assets/Sons_of_the_Forest.jpg",
-      crop: "center top"
+      crop: "center top",
+      link: "https://endnightgames.com/"
     }
   ],
 
