@@ -87,10 +87,14 @@ const SITE_DATA = {
       role: "Undergraduate Research Assistant",
       org: "The Machine Agency, University of Washington",
       when: "Aug 2025 – Dec 2025",
-      description: "Supported development of p5.fab, a library for G-code serial communication with p5.js.",
+      description: [
+        "Applied p5.fab across 3D print workflows for direct G-code machine control, stress-testing serial communication and specifying fixes for toolpath streaming failures. Compatible with 4+ industry standard printer models.",
+        "Scripted custom toolpaths that bypass traditional CAD/CAM software in 3D printers, tuning low-level machine parameters such as extrusion rate and bed temperature to reach geometries standard slicers could not produce.",
+        "Produced tactile graphics for visually impaired learners through programmatic texture generation and non-planar 3D prints."
+      ],
       skills: {
         Languages: ["JavaScript", "G-code"],
-        Tools: ["p5.js", "Node.js", "Git"]
+        Tools: ["p5.fab", "p5.js", "3D Printing", "Git"]
       },
       images: [
         // { src: "assets/experience/machine-agency-1.jpg", caption: "short caption" }
@@ -100,10 +104,13 @@ const SITE_DATA = {
       role: "Firmware Developer",
       org: "Washington Superbike",
       when: "Oct 2024 – Jun 2025",
-      description: "Built a hardware-in-the-loop testing system using Arduino, Raspberry Pi Pico, and Teensy over CAN bus.",
+      description: [
+        "Designed a Hardware-in-the-Loop (HIL) system using Arduino, Raspberry Pi Pico, and Teensy with C++ to validate motor controller performance in electric motorcycles.",
+        "Implemented CAN bus communication to simulate fault scenarios including battery overheating and precharge circuit failures, reducing undetected fault conditions by ~70% prior to physical motor controller testing."
+      ],
       skills: {
-        Languages: ["C++", "C"],
-        Hardware: ["Arduino", "Raspberry Pi Pico", "Teensy", "CAN bus"]
+        Languages: ["C++"],
+        Hardware: ["Arduino", "Raspberry Pi Pico", "Teensy", "CAN Bus"]
       },
       images: []
     },
@@ -111,10 +118,13 @@ const SITE_DATA = {
       role: "Software Engineering Intern",
       org: "Fair Worlds",
       when: "Aug 2023 – Jul 2024",
-      description: "Built geospatial web AR experiences with 8th Wall.js and Unity.",
+      description: [
+        "Engineered geospatial web AR experiences using 8th Wall.js, Unity, JavaScript, and HTML for a VR/AR company specializing in immersive projects for major clients such as Amazon, AMD, and Dell.",
+        "Co-developed the Seattle Art Tour in Niantic 8th Wall by 3D scanning 50+ public installations, animating assets in Adobe Aero, and implementing image recognition for AR navigation."
+      ],
       skills: {
-        Languages: ["JavaScript", "C#"],
-        Tools: ["8th Wall", "Unity", "WebAR"]
+        Languages: ["JavaScript", "HTML"],
+        Tools: ["8th Wall.js", "Unity", "Adobe Aero"]
       },
       images: []
     }
