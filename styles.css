@@ -2,10 +2,10 @@
 
 :root {
   --bg: #161a19;
-  --panel: #1c2124;
-  --panel-line: #2f373b;
-  --tab-bg: #101416;
-  --sunken: #181c1f;
+  --panel: #23252d;
+  --panel-line: #343745;
+  --tab-bg: #12141a;
+  --sunken: #191b22;
   --folder-ink: #331b26;
   --block-inset: 62px;
   --text: #ecefee;
@@ -13,6 +13,7 @@
   --accent: #b3a1de;
   --accent-dim: rgba(179, 161, 222, 0.16);
   --accent-2: #d699b0;
+  --accent-2-light: #e2b6c7;
   --max-width: 1700px;
   --font-heading: 'Audiowide', sans-serif;
   --font-body: 'Space Mono', 'Work Sans', monospace;
@@ -108,12 +109,13 @@ nav.site-nav .wrap {
   font-weight: 400;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .nav-links a:hover {
-  background: var(--accent);
-  color: var(--tab-bg);
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  color: var(--folder-ink);
 }
 
 .nav-links a.active {
@@ -204,10 +206,10 @@ nav.site-nav .wrap {
   color: var(--folder-ink);
   font-weight: 600;
   font-size: 0.9rem;
-  transition: opacity 0.15s ease;
+  transition: background 0.15s ease;
 }
 
-.btn:hover { opacity: 0.88; }
+.btn:hover { background: var(--accent-2-light); }
 
 /* ---------- Section headings ---------- */
 
@@ -367,7 +369,7 @@ nav.site-nav .wrap {
 }
 
 .folder-tab:hover::before,
-.folder-tab:hover::after { background: #e2b6c7; }
+.folder-tab:hover::after { background: var(--accent-2-light); }
 
 .folder-tab[aria-selected="true"] {
   z-index: 4;
@@ -495,7 +497,7 @@ nav.site-nav .wrap {
   background: var(--tab-bg);
   color: var(--accent);
   cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .folder-arrow svg { width: 21px; height: 21px; }
@@ -504,8 +506,9 @@ nav.site-nav .wrap {
 .folder-arrow.next { right: 4px; }
 
 .folder-arrow:hover {
-  background: var(--accent);
-  color: var(--tab-bg);
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  color: var(--folder-ink);
 }
 
 /* ---------- Get in touch ---------- */
@@ -569,7 +572,7 @@ nav.site-nav .wrap {
   padding: 0;
   border: 2px solid var(--accent);
   border-radius: 50%;
-  background: rgba(16, 20, 22, 0.85);
+  background: rgba(18, 20, 26, 0.85);
   backdrop-filter: blur(6px);
   color: var(--accent);
   cursor: pointer;
@@ -579,7 +582,11 @@ nav.site-nav .wrap {
 
 .scroll-cue svg { width: 22px; height: 22px; }
 
-.scroll-cue:hover { background: var(--accent); color: var(--tab-bg); }
+.scroll-cue:hover {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  color: var(--folder-ink);
+}
 
 .scroll-cue.is-hidden {
   opacity: 0;
@@ -666,7 +673,7 @@ footer { padding: 44px 0 64px; color: var(--text-muted); font-size: 0.85rem; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .nav-links a, .btn, .folder-tab, .folder-arrow, .contact-card { transition: none; }
+  .nav-links a, .btn, .folder-tab, .folder-arrow, .contact-list a { transition: none; }
   .scroll-cue { animation: none; }
 }
 
