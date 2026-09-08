@@ -145,10 +145,7 @@ nav.site-nav .wrap {
   overflow: hidden;
   aspect-ratio: 4 / 5;
   background: var(--sunken);
-  border: 1px dashed var(--panel-line);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid var(--panel-line);
 }
 
 .placeholder-note {
