@@ -17,7 +17,7 @@ const SITE_DATA = {
       developer: "Riot Games",
       caption: "",
       image: "assets/valorant.jpg",
-      crop: "center 35%",
+      crop: "center 75%",
       link: "https://playvalorant.com/en-us/"
     },
     {
@@ -45,11 +45,10 @@ const SITE_DATA = {
       link: "https://www.firewatchgame.com/"
     },
     {
-      title: "Sons of the Forest",
+      title: "The Forest",
       developer: "Endnight Games",
       caption: "",
-      image: "assets/Sons_of_the_Forest.jpg",
-      crop: "center top",
+      image: "assets/theforest.avif",
       link: "https://endnightgames.com/"
     }
   ],
