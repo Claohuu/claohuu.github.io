@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Work+Sans:wght@400;500;600&display=swap');
-@import url('https://fonts.cdnfonts.com/css/white-rabbit');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
   --bg: #0b0f1a;
   --panel: #121826;
   --panel-line: #232c3d;
+  --tab-bg: #070a12;
   --text: #edeff5;
   --text-muted: #8a93a6;
   --accent: #6ea0f0;
@@ -12,7 +12,7 @@
   --accent-2: #e0a33f;
   --max-width: 1700px;
   --font-heading: 'Audiowide', sans-serif;
-  --font-body: 'white rabbit by alice', 'Work Sans', sans-serif;
+  --font-body: 'Space Mono', 'Work Sans', monospace;
 }
 
 * { box-sizing: border-box; }
@@ -95,13 +95,13 @@ nav.site-nav .wrap {
 
 .nav-links a {
   display: inline-block;
-  padding: 8px 14px;
+  padding: 7px 16px;
   border-radius: 2px;
   border: 1px solid var(--accent);
-  background: var(--panel);
-  color: var(--text-muted);
+  background: var(--tab-bg);
+  color: var(--accent);
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 400;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -109,8 +109,8 @@ nav.site-nav .wrap {
 }
 
 .nav-links a:hover {
-  background: var(--accent-dim);
-  color: var(--accent);
+  background: var(--accent);
+  color: var(--tab-bg);
 }
 
 .nav-links a.active {
@@ -125,7 +125,7 @@ nav.site-nav .wrap {
 }
 
 .hero-panel {
-  border: 1px solid var(--accent);
+  border: 3px solid var(--accent);
   border-radius: 0;
   padding: 40px;
   display: grid;
@@ -341,7 +341,7 @@ footer { padding: 44px 0 64px; color: var(--text-muted); font-size: 0.85rem; }
   nav.site-nav .wrap { flex-wrap: wrap; height: auto; padding: 14px 24px; }
   .nav-left { gap: 12px; }
   .nav-links { gap: 6px; flex-wrap: wrap; }
-  .nav-links a { padding: 6px 11px; font-size: 0.8rem; }
+  .nav-links a { padding: 6px 13px; font-size: 0.88rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
