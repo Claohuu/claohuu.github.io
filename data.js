@@ -23,6 +23,16 @@ const SITE_DATA = {
       title: "Game Title",
       caption: "why you love it, in a few words",
       image: ""
+    },
+    {
+      title: "Game Title",
+      caption: "why you love it, in a few words",
+      image: ""
+    },
+    {
+      title: "Game Title",
+      caption: "why you love it, in a few words",
+      image: ""
     }
   ],
 

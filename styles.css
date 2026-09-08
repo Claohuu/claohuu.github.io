@@ -5,9 +5,8 @@
   --panel: #121826;
   --panel-line: #232c3d;
   --tab-bg: #070a12;
-  --manila: #e2cfa1;
-  --manila-dim: #9d8c62;
   --folder-ink: #1a1206;
+  --block-inset: 62px;
   --text: #edeff5;
   --text-muted: #8a93a6;
   --accent: #6ea0f0;
@@ -227,14 +226,14 @@ nav.site-nav .wrap {
 
 .games-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
 }
 
 .game-card { position: relative; border-radius: 2px; overflow: hidden; border: 1px solid var(--panel-line); }
 
 .game-card .thumb {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1;
   background: #0e1420;
   display: flex;
   align-items: center;
@@ -248,12 +247,12 @@ nav.site-nav .wrap {
 .game-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
 
 .game-card .caption {
-  padding: 14px 16px 18px;
+  padding: 11px 13px 13px;
   background: var(--panel);
 }
 
 .game-card .caption h3 {
-  font-size: 1.05rem;
+  font-size: 0.92rem;
   color: var(--accent);
   margin-bottom: 4px;
 }
@@ -271,18 +270,27 @@ nav.site-nav .wrap {
 .page-header h1 { font-size: 2.4rem; }
 .page-header p { color: var(--text-muted); margin-top: 10px; max-width: 60ch; }
 
+/* line the page title up with the left edge of the block beneath it */
+.page-header.inset .wrap { padding-left: calc(24px + var(--block-inset)); }
+.art-grid { margin: 0 var(--block-inset); }
+
 /* ---------- File folder (experience / projects / volunteering) ---------- */
 
 .folder-shell {
   position: relative;
-  padding: 0 62px;
+  padding: 0 var(--block-inset);
 }
 
+/* the strip's 3px bottom padding gives the open tab room to hang over the
+   block's top border without the scroll container clipping it */
 .folder-tabs {
+  position: relative;
+  z-index: 3;
   display: flex;
   align-items: flex-end;
-  gap: 5px;
-  padding-left: 18px;
+  gap: 0 6px;
+  padding: 0 0 3px 16px;
+  margin-bottom: -3px;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -290,36 +298,63 @@ nav.site-nav .wrap {
 .folder-tabs::-webkit-scrollbar { display: none; }
 
 .folder-tab {
+  position: relative;
   flex: 0 0 auto;
   appearance: none;
   cursor: pointer;
   border: 0;
   margin: 0;
-  padding: 9px 22px 11px;
-  background: var(--manila-dim);
-  color: #241d0d;
+  padding: 10px 24px 12px;
+  background: none;
+  color: var(--folder-ink);
   font-family: var(--font-heading);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
-  clip-path: polygon(13px 0, calc(100% - 13px) 0, 100% 100%, 0 100%);
-  transition: background 0.15s ease, color 0.15s ease, padding 0.15s ease;
+  transition: color 0.15s ease;
 }
 
-.folder-tab:hover { background: #bda874; }
+/* the tapered folder-tab shape: perspective tilts the box so the top
+   edge is narrower than the bottom, and the border follows the taper */
+.folder-tab::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--accent-2);
+  border: 3px solid var(--accent-2);
+  border-bottom: none;
+  border-radius: 7px 7px 0 0;
+  transform: perspective(11px) rotateX(2.4deg);
+  transform-origin: bottom center;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.folder-tab:hover::before { background: #eeb75a; border-color: #eeb75a; }
 
 .folder-tab[aria-selected="true"] {
-  position: relative;
-  z-index: 2;
-  margin-bottom: -3px;
-  padding: 12px 24px 15px;
-  background: var(--manila);
-  color: var(--folder-ink);
+  z-index: 3;
+  color: var(--text);
+  padding: 13px 26px 14px;
+}
+
+/* the open tab shares the block's fill and outline, so the two read as
+   one continuous shape — the tab's fill covers the block's top border */
+.folder-tab[aria-selected="true"]::before,
+.folder-tab[aria-selected="true"]:hover::before {
+  bottom: -3px;
+  background: var(--panel);
+  border-color: var(--accent);
 }
 
 .folder-body {
   position: relative;
+  z-index: 2;
+  min-height: 560px;
   border: 3px solid var(--accent);
   border-radius: 0 3px 3px 3px;
   background: var(--panel);
@@ -441,53 +476,47 @@ nav.site-nav .wrap {
 
 .contact-section {
   scroll-margin-top: 92px;
-  padding-bottom: 64px;
+  padding-bottom: 60px;
+  text-align: center;
 }
 
 .contact-section h2 { text-transform: uppercase; }
 
 .contact-lead {
   color: var(--text-muted);
-  max-width: 56ch;
-  margin: -14px 0 28px;
+  font-size: 0.88rem;
+  margin: -16px 0 24px;
 }
 
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.contact-card {
-  display: block;
-  border: 2px solid var(--accent);
-  border-radius: 2px;
-  background: var(--tab-bg);
-  padding: 22px 24px 24px;
-  transition: background 0.15s ease, color 0.15s ease;
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.88rem;
 }
 
 .contact-label {
-  display: block;
   font-family: var(--font-heading);
   font-size: 0.72rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 10px;
-  transition: color 0.15s ease;
+  margin-right: 8px;
 }
 
-.contact-value {
-  display: block;
-  font-size: 0.95rem;
-  color: var(--text);
-  word-break: break-word;
+.contact-list a {
+  color: var(--text-muted);
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.contact-card:hover { background: var(--accent); }
-.contact-card:hover .contact-label,
-.contact-card:hover .contact-value { color: var(--tab-bg); }
+.contact-list a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
 
 /* ---------- Scroll cue ---------- */
 
@@ -577,13 +606,15 @@ footer { padding: 44px 0 64px; color: var(--text-muted); font-size: 0.85rem; }
 
 @media (max-width: 1100px) {
   .folder-grid { grid-template-columns: 1fr; gap: 26px; }
+  .folder-body { min-height: 0; }
+  .games-row { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 760px) {
+  :root { --block-inset: 0px; }
   .hero-panel { grid-template-columns: 1fr; padding: 24px; }
   .games-row { grid-template-columns: repeat(2, 1fr); }
   .art-grid { grid-template-columns: repeat(2, 1fr); }
-  .contact-grid { grid-template-columns: 1fr; }
   nav.site-nav .wrap { flex-wrap: wrap; height: auto; padding: 14px 24px; }
   .nav-left { gap: 12px; }
   .nav-links { gap: 6px; flex-wrap: wrap; }

@@ -5,7 +5,7 @@
    in data.js instead.
    ============================================================ */
 
-const ROUND_ARROW = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>`;
+const TRIANGLE = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="8,4 20,12 8,20"></polygon></svg>`;
 
 function highlightActiveNav() {
   const current = window.location.pathname.split("/").pop() || "index.html";
@@ -54,8 +54,7 @@ function folderShots(images, label) {
           ${shot.caption ? `<figcaption>${shot.caption}</figcaption>` : ""}
         </figure>
       `).join("")
-    : `<div class="folder-shot is-empty">${placeholderThumb("Photos")}</div>
-       <div class="folder-shot is-empty">${placeholderThumb("Photos")}</div>`;
+    : `<div class="folder-shot is-empty">${placeholderThumb("Photos")}</div>`.repeat(4);
   return `<div class="folder-shots">${frames}</div>`;
 }
 
@@ -92,8 +91,8 @@ function renderFolder(rootId, dataKey) {
   `).join("");
 
   const arrows = items.length > 1
-    ? `<button class="folder-arrow prev" type="button" aria-label="Previous">${ROUND_ARROW}</button>
-       <button class="folder-arrow next" type="button" aria-label="Next">${ROUND_ARROW}</button>`
+    ? `<button class="folder-arrow prev" type="button" aria-label="Previous">${TRIANGLE}</button>
+       <button class="folder-arrow next" type="button" aria-label="Next">${TRIANGLE}</button>`
     : "";
 
   root.innerHTML = `
