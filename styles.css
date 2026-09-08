@@ -161,7 +161,14 @@ nav.site-nav .wrap {
 
 .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-.hero-text { padding-top: 5px; }
+/* centres the text against the photo where there is room; the transform nudges
+   it down without adding height, so the panel size is unaffected */
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(10px);
+}
 
 .hero-text .eyebrow {
   color: var(--accent);
