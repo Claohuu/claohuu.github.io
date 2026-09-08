@@ -622,6 +622,8 @@ nav.site-nav .wrap {
 
 /* ---------- Resume page ---------- */
 
+.resume-body { margin: 0 var(--block-inset); }
+
 .resume-download {
   display: inline-block;
   margin: 4px 0 32px;
