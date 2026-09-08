@@ -8,31 +8,44 @@ const SITE_DATA = {
 
   // Shown in the games row on the home page.
   // image: path to a photo in /assets (e.g. "assets/games/hollow-knight.jpg")
+  /* caption is an optional personal line — fill it in or leave it empty.
+     crop shifts which part of the art survives the square crop; lower
+     percentages keep more of the top, where cover logos usually sit. */
   games: [
     {
-      title: "Game Title",
-      caption: "why you love it, in a few words",
-      image: ""
+      title: "Valorant",
+      developer: "Riot Games",
+      caption: "",
+      image: "assets/valorant.jpg",
+      crop: "center 35%"
     },
     {
-      title: "Game Title",
-      caption: "why you love it, in a few words",
-      image: ""
+      title: "Death Stranding",
+      developer: "Kojima Productions",
+      caption: "",
+      image: "assets/deathStranding.jpg",
+      crop: "center 40%"
     },
     {
-      title: "Game Title",
-      caption: "why you love it, in a few words",
-      image: ""
+      title: "Peak",
+      developer: "Aggro Crab and Landfall Games",
+      caption: "",
+      image: "assets/peak.jpg",
+      crop: "center center"
     },
     {
-      title: "Game Title",
-      caption: "why you love it, in a few words",
-      image: ""
+      title: "Firewatch",
+      developer: "Campo Santo",
+      caption: "",
+      image: "assets/firewatch.jpg",
+      crop: "center top"
     },
     {
-      title: "Game Title",
-      caption: "why you love it, in a few words",
-      image: ""
+      title: "Sons of the Forest",
+      developer: "Endnight Games",
+      caption: "",
+      image: "assets/Sons_of_the_Forest.jpg",
+      crop: "center top"
     }
   ],
 

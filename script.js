@@ -25,11 +25,12 @@ function renderGames() {
   row.innerHTML = SITE_DATA.games.map(game => `
     <div class="game-card">
       <div class="thumb">
-        ${game.image ? `<img src="${game.image}" alt="${game.title}">` : placeholderThumb(game.title || "Game image")}
+        ${game.image ? `<img src="${game.image}" alt="${game.title}"${game.crop ? ` style="object-position: ${game.crop}"` : ""}>` : placeholderThumb(game.title || "Game image")}
       </div>
       <div class="caption">
         <h3>${game.title}</h3>
-        <p>${game.caption}</p>
+        <p class="dev">${game.developer}</p>
+        ${game.caption ? `<p>${game.caption}</p>` : ""}
       </div>
     </div>
   `).join("");

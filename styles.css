@@ -285,6 +285,12 @@ nav.site-nav .wrap {
   margin: 0;
 }
 
+.game-card .caption p.dev {
+  font-style: normal;
+  font-size: 0.72rem;
+  margin-bottom: 2px;
+}
+
 /* ---------- Generic page header ---------- */
 
 .page-header { padding: 56px 0 8px; }
