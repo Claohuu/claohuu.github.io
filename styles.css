@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap');
 
 :root {
-  --bg: #0b0f1a;
-  --panel: #121826;
-  --panel-line: #232c3d;
-  --tab-bg: #070a12;
-  --folder-ink: #1a1206;
+  --bg: #161a19;
+  --panel: #202523;
+  --panel-line: #333b39;
+  --tab-bg: #111514;
+  --sunken: #1a1e1d;
+  --folder-ink: #331b26;
   --block-inset: 62px;
-  --text: #edeff5;
-  --text-muted: #8a93a6;
-  --accent: #6ea0f0;
-  --accent-dim: rgba(110, 160, 240, 0.16);
-  --accent-2: #e0a33f;
+  --text: #ecefee;
+  --text-muted: #8d9694;
+  --accent: #b4a6d6;
+  --accent-dim: rgba(180, 166, 214, 0.16);
+  --accent-2: #cfa3b4;
   --max-width: 1700px;
   --font-heading: 'Audiowide', sans-serif;
   --font-body: 'Space Mono', 'Work Sans', monospace;
@@ -53,7 +54,7 @@ nav.site-nav {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(11, 15, 26, 0.92);
+  background: rgba(22, 26, 25, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--panel-line);
 }
@@ -141,7 +142,7 @@ nav.site-nav .wrap {
   border-radius: 2px;
   overflow: hidden;
   aspect-ratio: 4 / 5;
-  background: #0e1420;
+  background: var(--sunken);
   border: 1px dashed var(--panel-line);
   display: flex;
   align-items: center;
@@ -208,7 +209,7 @@ nav.site-nav .wrap {
 
 .btn-primary {
   background: var(--accent-2);
-  color: #1a1206;
+  color: var(--folder-ink);
 }
 
 .btn-secondary {
@@ -234,7 +235,7 @@ nav.site-nav .wrap {
 
 .game-card .thumb {
   aspect-ratio: 1;
-  background: #0e1420;
+  background: var(--sunken);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -375,7 +376,7 @@ nav.site-nav .wrap {
 }
 
 .folder-tab:hover::before,
-.folder-tab:hover::after { background: #eeb75a; }
+.folder-tab:hover::after { background: #ddb4c3; }
 
 .folder-tab[aria-selected="true"] {
   z-index: 4;
@@ -469,7 +470,7 @@ nav.site-nav .wrap {
   margin: 0;
   border: 1px solid var(--panel-line);
   border-radius: 2px;
-  background: #0e1420;
+  background: var(--sunken);
   overflow: hidden;
 }
 
@@ -577,7 +578,7 @@ nav.site-nav .wrap {
   padding: 0;
   border: 2px solid var(--accent);
   border-radius: 50%;
-  background: rgba(7, 10, 18, 0.85);
+  background: rgba(17, 21, 20, 0.85);
   backdrop-filter: blur(6px);
   color: var(--accent);
   cursor: pointer;
@@ -605,7 +606,7 @@ nav.site-nav .wrap {
 
 .art-grid .thumb {
   aspect-ratio: 1;
-  background: #0e1420;
+  background: var(--sunken);
   border: 1px solid var(--panel-line);
   border-radius: 2px;
   overflow: hidden;
@@ -628,7 +629,7 @@ nav.site-nav .wrap {
   margin: 4px 0 32px;
   padding: 12px 22px;
   background: var(--accent-2);
-  color: #1a1206;
+  color: var(--folder-ink);
   border-radius: 2px;
   font-weight: 600;
   font-size: 0.9rem;
