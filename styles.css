@@ -276,6 +276,11 @@ nav.site-nav .wrap {
 
 /* ---------- File folder (experience / projects / volunteering) ---------- */
 
+.folder-section {
+  border-top: none;
+  padding-top: 14px;
+}
+
 .folder-shell {
   position: relative;
   padding: 0 var(--block-inset);
@@ -297,58 +302,42 @@ nav.site-nav .wrap {
 
 .folder-tabs::-webkit-scrollbar { display: none; }
 
+/* real borders (not a transformed shape) so the tab's outline is the same
+   3px as the block's and the two meet flush */
 .folder-tab {
   position: relative;
+  z-index: 1;
   flex: 0 0 auto;
   appearance: none;
   cursor: pointer;
-  border: 0;
   margin: 0;
-  padding: 10px 24px 12px;
-  background: none;
+  padding: 10px 28px 12px;
+  border: 3px solid var(--accent-2);
+  border-bottom: none;
+  border-radius: 9px 9px 0 0;
+  background: var(--accent-2);
   color: var(--folder-ink);
   font-family: var(--font-heading);
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
-  transition: color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-/* the tapered folder-tab shape: perspective tilts the box so the top
-   edge is narrower than the bottom, and the border follows the taper */
-.folder-tab::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  background: var(--accent-2);
-  border: 3px solid var(--accent-2);
-  border-bottom: none;
-  border-radius: 7px 7px 0 0;
-  transform: perspective(11px) rotateX(2.4deg);
-  transform-origin: bottom center;
-  transition: background 0.15s ease, border-color 0.15s ease;
-}
+.folder-tab:hover { background: #eeb75a; border-color: #eeb75a; }
 
-.folder-tab:hover::before { background: #eeb75a; border-color: #eeb75a; }
-
-.folder-tab[aria-selected="true"] {
-  z-index: 3;
-  color: var(--text);
-  padding: 13px 26px 14px;
-}
-
-/* the open tab shares the block's fill and outline, so the two read as
-   one continuous shape — the tab's fill covers the block's top border */
-.folder-tab[aria-selected="true"]::before,
-.folder-tab[aria-selected="true"]:hover::before {
-  bottom: -3px;
+/* the open tab shares the block's fill and outline, and hangs 3px over the
+   block's top border so its fill hides it — the two read as one shape */
+.folder-tab[aria-selected="true"],
+.folder-tab[aria-selected="true"]:hover {
+  z-index: 4;
+  margin-bottom: -3px;
+  padding-top: 13px;
+  padding-bottom: 15px;
   background: var(--panel);
   border-color: var(--accent);
+  color: var(--text);
 }
 
 .folder-body {
