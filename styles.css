@@ -136,14 +136,15 @@ nav.site-nav .wrap {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 40px;
-  align-items: center;
+  align-items: stretch;
   background: var(--panel);
 }
 
+/* no fixed ratio — the photo takes its height from the text column so the
+   panel stays balanced however long the bio gets */
 .hero-photo {
   border-radius: 2px;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
   background: var(--sunken);
   border: 1px solid var(--panel-line);
 }
@@ -156,6 +157,8 @@ nav.site-nav .wrap {
 }
 
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+.hero-text { padding-top: 44px; }
 
 .hero-text .eyebrow {
   color: var(--accent);
@@ -701,6 +704,7 @@ footer { padding: 44px 0 64px; color: var(--text-muted); font-size: 0.85rem; }
 @media (max-width: 760px) {
   :root { --block-inset: 0px; }
   .hero-panel { grid-template-columns: 1fr; padding: 24px; }
+  .hero-photo { aspect-ratio: 4 / 5; }
   .games-row { grid-template-columns: repeat(2, 1fr); }
   .art-grid { grid-template-columns: repeat(2, 1fr); }
   nav.site-nav .wrap { flex-wrap: wrap; height: auto; padding: 14px 24px; }
