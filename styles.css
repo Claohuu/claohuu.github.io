@@ -472,7 +472,7 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
   margin-bottom: 8px;
 }
 
-.folder-org { color: var(--accent); font-size: 0.9rem; }
+.folder-org { color: var(--accent); font-size: 1.15rem; }
 .folder-when { color: var(--text-muted); font-size: 0.82rem; margin-top: 2px; }
 
 .folder-grid {

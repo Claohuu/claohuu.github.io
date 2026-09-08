@@ -67,21 +67,26 @@ function paragraphs(description) {
   return parts.map(part => `<p>${part}</p>`).join("");
 }
 
-function renderFolder(rootId, dataKey) {
+/* orgLed pages (experience, volunteering) lead with the organisation and put the
+   role underneath; projects lead with the project name instead */
+function renderFolder(rootId, dataKey, orgLed = false) {
   const root = document.getElementById(rootId);
   const items = SITE_DATA[dataKey];
   if (!root || !items || !items.length) return;
 
+  const heading = item => (orgLed ? item.org : item.role);
+  const subhead = item => (orgLed ? item.role : item.org);
+
   const tabs = items.map((item, i) => `
     <button class="folder-tab" type="button" role="tab" data-index="${i}"
-            aria-selected="${i === 0}" aria-controls="${dataKey}-panel-${i}">${item.role}</button>
+            aria-selected="${i === 0}" aria-controls="${dataKey}-panel-${i}">${heading(item)}</button>
   `).join("");
 
   const panels = items.map((item, i) => `
     <article class="folder-panel${i === 0 ? " is-active" : ""}" id="${dataKey}-panel-${i}" role="tabpanel">
       <header class="folder-head">
-        <h2>${item.role}</h2>
-        <div class="folder-org">${item.org}</div>
+        <h2>${heading(item)}</h2>
+        <div class="folder-org">${subhead(item)}</div>
         <div class="folder-when">${item.when}</div>
       </header>
       <div class="folder-grid">
@@ -89,7 +94,7 @@ function renderFolder(rootId, dataKey) {
           ${paragraphs(item.description)}
           ${skillBoxes(item.skills)}
         </div>
-        ${folderShots(item.images, item.role)}
+        ${folderShots(item.images, heading(item))}
       </div>
     </article>
   `).join("");
@@ -160,9 +165,9 @@ function initScrollCue() {
 document.addEventListener("DOMContentLoaded", () => {
   highlightActiveNav();
   renderGames();
-  renderFolder("experience-folder", "experience");
+  renderFolder("experience-folder", "experience", true);
   renderFolder("projects-folder", "projects");
-  renderFolder("volunteering-folder", "volunteering");
+  renderFolder("volunteering-folder", "volunteering", true);
   renderArt();
   initScrollCue();
 });
