@@ -132,7 +132,7 @@ nav.site-nav .wrap {
 .hero-panel {
   border: 3px solid var(--accent);
   border-radius: 0;
-  padding: 24px 40px 26px;
+  padding: 24px 40px 18px;
   display: grid;
   grid-template-columns: 0.75fr 1.25fr;
   gap: 40px;
@@ -144,7 +144,7 @@ nav.site-nav .wrap {
    width instead of cropping into a tall strip as the column narrows */
 .hero-photo {
   position: relative;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 7 / 10;
   align-self: start;
   border-radius: 2px;
   overflow: hidden;
@@ -161,7 +161,7 @@ nav.site-nav .wrap {
 
 .hero-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
-.hero-text { padding-top: 26px; }
+.hero-text { padding-top: 56px; }
 
 .hero-text .eyebrow {
   color: var(--accent);
@@ -180,14 +180,14 @@ nav.site-nav .wrap {
 
 .hero-text p.bio {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   max-width: 66ch;
-  margin-bottom: 12px;
+  margin-bottom: 7px;
 }
 
 .facts {
-  margin: 0 0 26px;
-  padding: 8px 0 0;
+  margin: 0 0 16px;
+  padding: 4px 0 0;
   border-top: 1px solid var(--panel-line);
 }
 
@@ -195,7 +195,7 @@ nav.site-nav .wrap {
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 12px;
-  padding: 3px 0;
+  padding: 2px 0;
 }
 
 .facts dt {
@@ -320,7 +320,8 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
 
 /* ---------- File folder (experience / projects / volunteering) ---------- */
 
-.folder-section {
+.folder-section,
+.resume-section {
   border-top: none;
   padding-top: 0;
 }
