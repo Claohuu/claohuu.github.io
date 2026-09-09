@@ -124,7 +124,7 @@ const SITE_DATA = {
       ],
       skills: {
         Languages: ["JavaScript", "HTML"],
-        Tools: ["8th Wall.js", "Unity", "Adobe Aero"]
+        Tools: ["8th Wall.js", "Adobe Aero"]
       },
       images: []
     }
