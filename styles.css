@@ -182,7 +182,7 @@ nav.site-nav .wrap {
 .hero-text h1 {
   font-size: 4rem;
   line-height: 1.05;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   text-transform: uppercase;
 }
 
@@ -190,7 +190,9 @@ nav.site-nav .wrap {
   color: var(--text-muted);
   font-size: 0.82rem;
   max-width: 66ch;
-  margin-bottom: 5px;
+  /* flex column, so margins add rather than collapse — set both explicitly
+     to keep the gap above and below the bio even */
+  margin: 0 0 14px;
 }
 
 .facts {
