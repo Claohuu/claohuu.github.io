@@ -482,6 +482,10 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
   align-items: start;
 }
 
+/* entries with no photos let the text use the whole block */
+.folder-grid.is-textonly { grid-template-columns: 1fr; }
+.folder-grid.is-textonly .folder-text p { max-width: 78ch; }
+
 .folder-text p { color: var(--text-muted); margin: 0 0 16px; }
 
 .skill-boxes {
@@ -525,15 +529,11 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
   overflow: hidden;
 }
 
-.folder-shot img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+/* no forced ratio and no cover, so photos are never cropped */
+.folder-shot img { width: 100%; height: auto; display: block; }
 
-.folder-shot.is-empty {
-  aspect-ratio: 4 / 3;
-  border-style: dashed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* landscape shots take the full width rather than sitting in one column */
+.folder-shot.is-wide { grid-column: 1 / -1; }
 
 .folder-shot figcaption {
   padding: 8px 10px 10px;

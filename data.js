@@ -81,7 +81,13 @@ const SITE_DATA = {
         Languages: ["C#"],
         Tools: ["Unity", "Blender", "Shader Graph", "Git"]
       },
-      images: []
+      // wide: true makes a landscape shot span both columns
+      images: [
+        { src: "assets/crabGroup.jpg", caption: "" },
+        { src: "assets/crabChair.jpg", caption: "" },
+        { src: "assets/bingBong.jpg", caption: "" },
+        { src: "assets/crabShack.jpg", caption: "" }
+      ]
     },
     {
       role: "Undergraduate Research Assistant",
@@ -97,7 +103,9 @@ const SITE_DATA = {
         Tools: ["p5.fab", "p5.js", "3D Printing", "Git"]
       },
       images: [
-        // { src: "assets/experience/machine-agency-1.jpg", caption: "short caption" }
+        { src: "assets/machineAgency.jpg", caption: "" },
+        { src: "assets/machineAgency (2).jpg", caption: "" },
+        { src: "assets/machineAgency.png", caption: "" }
       ]
     },
     {
@@ -106,13 +114,20 @@ const SITE_DATA = {
       when: "Oct 2024 – Jun 2025",
       description: [
         "Designed a Hardware-in-the-Loop (HIL) system using Arduino, Raspberry Pi Pico, and Teensy with C++ to validate motor controller performance in electric motorcycles.",
-        "Implemented CAN bus communication to simulate fault scenarios including battery overheating and precharge circuit failures, reducing undetected fault conditions by ~70% prior to physical motor controller testing."
+        "Implemented CAN bus communication to simulate fault scenarios including battery overheating and precharge circuit failures, reducing undetected fault conditions by ~70% prior to physical motor controller testing.",
+        "Outside of firmware, I designed team merchandise and posters and helped organize fundraisers to bring in more money for materials."
       ],
       skills: {
         Languages: ["C++"],
-        Hardware: ["Arduino", "Raspberry Pi Pico", "Teensy", "CAN Bus"]
+        Hardware: ["Arduino", "Raspberry Pi Pico", "Teensy", "CAN Bus"],
+        Design: ["Merch", "Posters", "Fundraising"]
       },
-      images: []
+      images: [
+        { src: "assets/washingtonSuperbike.png", caption: "" },
+        { src: "assets/superbike.png", caption: "" },
+        { src: "assets/superbikeFundraiser.jpg", caption: "" },
+        { src: "assets/superbikeDesign.PNG", caption: "" }
+      ]
     },
     {
       role: "Software Engineering Intern",
@@ -120,7 +135,8 @@ const SITE_DATA = {
       when: "Aug 2023 – Jul 2024",
       description: [
         "Engineered geospatial web AR experiences using 8th Wall.js, Unity, JavaScript, and HTML for a VR/AR company specializing in immersive projects for major clients such as Amazon, AMD, and Dell.",
-        "Co-developed the Seattle Art Tour in Niantic 8th Wall by 3D scanning 50+ public installations, animating assets in Adobe Aero, and implementing image recognition for AR navigation."
+        "Co-developed the Seattle Art Tour in Niantic 8th Wall by 3D scanning 50+ public installations, animating assets in Adobe Aero, and implementing image recognition for AR navigation.",
+        "One of the team projects I contributed to is live at <a href=\"https://www.spacetimeadventuretours.com/\" target=\"_blank\" rel=\"noopener\">spacetimeadventuretours.com</a>."
       ],
       skills: {
         Languages: ["JavaScript", "HTML"],

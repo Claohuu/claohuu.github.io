@@ -51,14 +51,12 @@ function skillBoxes(skills) {
 }
 
 function folderShots(images, label) {
-  const frames = images && images.length
-    ? images.map(shot => `
-        <figure class="folder-shot">
-          <img src="${shot.src}" alt="${shot.caption || label}">
-          ${shot.caption ? `<figcaption>${shot.caption}</figcaption>` : ""}
-        </figure>
-      `).join("")
-    : `<div class="folder-shot is-empty">${placeholderThumb("Photos")}</div>`.repeat(4);
+  const frames = images.map(shot => `
+    <figure class="folder-shot${shot.wide ? " is-wide" : ""}">
+      <img src="${shot.src}" alt="${shot.caption || label}">
+      ${shot.caption ? `<figcaption>${shot.caption}</figcaption>` : ""}
+    </figure>
+  `).join("");
   return `<div class="folder-shots">${frames}</div>`;
 }
 
@@ -89,12 +87,12 @@ function renderFolder(rootId, dataKey, orgLed = false) {
         <div class="folder-org">${subhead(item)}</div>
         <div class="folder-when">${item.when}</div>
       </header>
-      <div class="folder-grid">
+      <div class="folder-grid${item.images && item.images.length ? "" : " is-textonly"}">
         <div class="folder-text">
           ${paragraphs(item.description)}
           ${skillBoxes(item.skills)}
         </div>
-        ${folderShots(item.images, heading(item))}
+        ${item.images && item.images.length ? folderShots(item.images, heading(item)) : ""}
       </div>
     </article>
   `).join("");
