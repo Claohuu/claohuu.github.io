@@ -523,17 +523,16 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
 
 .skill-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 
-/* align-items: start stops short photos from stretching to the row height,
-   which is what left grey blocks under the landscape shots */
+/* multi-column instead of a grid: photos flow and the browser balances the two
+   columns, so tall and short shots pack together without leaving row gaps */
 .folder-shots {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
-  align-items: start;
+  column-count: 2;
+  column-gap: 14px;
 }
 
 .folder-shot {
-  margin: 0;
+  break-inside: avoid;
+  margin: 0 0 14px;
   border: 1px solid var(--panel-line);
   border-radius: 2px;
   background: var(--sunken);
@@ -544,7 +543,10 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
 .folder-shot img { width: 100%; height: auto; display: block; }
 
 /* landscape shots take the full width rather than sitting in one column */
-.folder-shot.is-wide { grid-column: 1 / -1; }
+.folder-shot.is-wide { column-span: all; }
+
+/* set smallShots: true on an entry to scale its photo set down */
+.folder-shots.is-small { max-width: 78%; }
 
 .folder-shot figcaption {
   padding: 8px 10px 10px;

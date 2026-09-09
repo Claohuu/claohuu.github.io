@@ -81,12 +81,12 @@ const SITE_DATA = {
         Languages: ["C#"],
         Tools: ["Unity", "Blender", "Shader Graph", "Git"]
       },
-      // ordered so photos of similar height share a row, keeping the column short
+      // portrait/landscape interleaved so the two columns balance evenly
       images: [
-        { src: "assets/crabGroup.jpg" },
-        { src: "assets/crabShack.jpg" },
         { src: "assets/crabChair.jpg" },
-        { src: "assets/bingBong.jpg" }
+        { src: "assets/crabGroup.jpg" },
+        { src: "assets/bingBong.jpg" },
+        { src: "assets/crabShack.jpg" }
       ]
     },
     {
@@ -102,9 +102,11 @@ const SITE_DATA = {
         Languages: ["JavaScript", "G-code"],
         Tools: ["p5.fab", "p5.js", "3D Printing", "Git"]
       },
+      smallShots: true,
       images: [
         { src: "assets/machineAgency (2).jpg" },
-        { src: "assets/machineAgency.png" }
+        { src: "assets/machineAgency.png" },
+        { src: "assets/machineAgency4.png" }
       ]
     },
     {
