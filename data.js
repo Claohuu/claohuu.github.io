@@ -81,12 +81,12 @@ const SITE_DATA = {
         Languages: ["C#"],
         Tools: ["Unity", "Blender", "Shader Graph", "Git"]
       },
-      // wide: true makes a landscape shot span both columns
+      // ordered so photos of similar height share a row, keeping the column short
       images: [
-        { src: "assets/crabGroup.jpg", caption: "" },
-        { src: "assets/crabChair.jpg", caption: "" },
-        { src: "assets/bingBong.jpg", caption: "" },
-        { src: "assets/crabShack.jpg", caption: "" }
+        { src: "assets/crabGroup.jpg" },
+        { src: "assets/crabShack.jpg" },
+        { src: "assets/crabChair.jpg" },
+        { src: "assets/bingBong.jpg" }
       ]
     },
     {
@@ -103,9 +103,8 @@ const SITE_DATA = {
         Tools: ["p5.fab", "p5.js", "3D Printing", "Git"]
       },
       images: [
-        { src: "assets/machineAgency.jpg", caption: "" },
-        { src: "assets/machineAgency (2).jpg", caption: "" },
-        { src: "assets/machineAgency.png", caption: "" }
+        { src: "assets/machineAgency (2).jpg" },
+        { src: "assets/machineAgency.png" }
       ]
     },
     {
@@ -123,10 +122,10 @@ const SITE_DATA = {
         Design: ["Merch", "Posters", "Fundraising"]
       },
       images: [
-        { src: "assets/washingtonSuperbike.png", caption: "" },
-        { src: "assets/superbike.png", caption: "" },
-        { src: "assets/superbikeFundraiser.jpg", caption: "" },
-        { src: "assets/superbikeDesign.PNG", caption: "" }
+        { src: "assets/superbike.png" },
+        { src: "assets/superbikeFundraiser.jpg" },
+        { src: "assets/washingtonSuperbike.png" },
+        { src: "assets/superbikeDesign.PNG" }
       ]
     },
     {
@@ -136,7 +135,7 @@ const SITE_DATA = {
       description: [
         "Engineered geospatial web AR experiences using 8th Wall.js, Unity, JavaScript, and HTML for a VR/AR company specializing in immersive projects for major clients such as Amazon, AMD, and Dell.",
         "Co-developed the Seattle Art Tour in Niantic 8th Wall by 3D scanning 50+ public installations, animating assets in Adobe Aero, and implementing image recognition for AR navigation.",
-        "One of the team projects I contributed to is live at <a href=\"https://www.spacetimeadventuretours.com/\" target=\"_blank\" rel=\"noopener\">spacetimeadventuretours.com</a>."
+        "One of the team projects I contributed to can be seen at <a href=\"https://www.spacetimeadventuretours.com/\" target=\"_blank\" rel=\"noopener\">spacetimeadventuretours.com</a>."
       ],
       skills: {
         Languages: ["JavaScript", "HTML"],
