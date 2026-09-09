@@ -50,14 +50,15 @@ function skillBoxes(skills) {
   return `<div class="skill-boxes">${boxes}</div>`;
 }
 
-function folderShots(images, label, small) {
+function folderShots(images, label, small, layout) {
   const frames = images.map(shot => `
     <figure class="folder-shot${shot.wide ? " is-wide" : ""}">
       <img src="${shot.src}" alt="${shot.caption || label}">
       ${shot.caption ? `<figcaption>${shot.caption}</figcaption>` : ""}
     </figure>
   `).join("");
-  return `<div class="folder-shots${small ? " is-small" : ""}">${frames}</div>`;
+  const classes = ["folder-shots", small ? "is-small" : "", layout === "grid" ? "is-grid" : ""];
+  return `<div class="${classes.filter(Boolean).join(" ")}">${frames}</div>`;
 }
 
 function paragraphs(description) {
@@ -92,7 +93,7 @@ function renderFolder(rootId, dataKey, orgLed = false) {
           ${paragraphs(item.description)}
           ${skillBoxes(item.skills)}
         </div>
-        ${item.images && item.images.length ? folderShots(item.images, heading(item), item.smallShots) : ""}
+        ${item.images && item.images.length ? folderShots(item.images, heading(item), item.smallShots, item.shotsLayout) : ""}
       </div>
     </article>
   `).join("");

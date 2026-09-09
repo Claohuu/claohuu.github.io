@@ -81,6 +81,8 @@ const SITE_DATA = {
         Languages: ["C#"],
         Tools: ["Unity", "Blender", "Shader Graph", "Git"]
       },
+      // grid: fills across each row, so the pairs stay side by side
+      shotsLayout: "grid",
       images: [
         { src: "assets/crabGroup.jpg" },
         { src: "assets/crabShack.jpg" },

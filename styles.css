@@ -545,8 +545,24 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
 /* landscape shots take the full width rather than sitting in one column */
 .folder-shot.is-wide { column-span: all; }
 
-/* set smallShots: true on an entry to scale its photo set down */
-.folder-shots.is-small { max-width: 78%; }
+/* shotsLayout: "grid" fills left-to-right in rows instead of flowing down
+   columns — use it when photos are meant to pair up across each row */
+.folder-shots.is-grid {
+  column-count: initial;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.folder-shots.is-grid .folder-shot { margin: 0; }
+
+/* set smallShots: true on an entry to scale its photo set down and centre it */
+.folder-shots.is-small {
+  max-width: 78%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .folder-shot figcaption {
   padding: 8px 10px 10px;
