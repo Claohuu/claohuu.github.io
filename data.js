@@ -81,12 +81,11 @@ const SITE_DATA = {
         Languages: ["C#"],
         Tools: ["Unity", "Blender", "Shader Graph", "Git"]
       },
-      // portrait/landscape interleaved so the two columns balance evenly
       images: [
-        { src: "assets/crabChair.jpg" },
         { src: "assets/crabGroup.jpg" },
-        { src: "assets/bingBong.jpg" },
-        { src: "assets/crabShack.jpg" }
+        { src: "assets/crabShack.jpg" },
+        { src: "assets/crabChair.jpg" },
+        { src: "assets/bingBong.jpg" }
       ]
     },
     {
