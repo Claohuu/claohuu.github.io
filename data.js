@@ -153,10 +153,10 @@ const SITE_DATA = {
       role: "Singularituna",
       org: "Built in 3 days for the Nocturne Mini Jam",
       when: "2026",
-      link: {
-        href: "https://ilazer.itch.io/fishvent-horizon",
-        label: "▶ Play it on itch.io"
-      },
+      links: [
+        { href: "https://ilazer.itch.io/fishvent-horizon", label: "▶ Play it on itch.io" },
+        { href: "https://github.com/cuttincows/Nocturne", label: "View the code on GitHub" }
+      ],
       description: "Adrift in deep space, your ship is sliding toward a black hole. You are low on fuel and starving, until you notice the eerie fish swarming the hull are both fuel and food. Burn them to buy distance, cook them to stay alive. The closer the black hole drags you, the stranger the catch gets: fish that turn invisible, teleport out of your aim, or fight back. Spear what you can, feed what's left to the reactor, and see how long you last.",
       bullets: [
         "Built the spearfishing loop as a four-state machine — held, throwing, thrown, retracting — driving a physics-based spear through Unity's Input System, with event hooks on hit, miss and retraction so audio, VFX and catch resolution stay decoupled from throw logic.",

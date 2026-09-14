@@ -491,6 +491,9 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
 .folder-text p { color: var(--text-muted); margin: 0 0 16px; }
 
 .folder-play {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
   margin: 0 0 16px;
   font-family: var(--font-heading);
   font-size: 0.82rem;

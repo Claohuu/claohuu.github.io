@@ -61,9 +61,12 @@ function folderShots(images, label, small, layout) {
   return `<div class="${classes.filter(Boolean).join(" ")}">${frames}</div>`;
 }
 
-function folderLink(link) {
-  if (!link) return "";
-  return `<p class="folder-play"><a href="${link.href}" target="_blank" rel="noopener">${link.label}</a></p>`;
+function folderLinks(links) {
+  if (!links || !links.length) return "";
+  const anchors = links
+    .map(link => `<a href="${link.href}" target="_blank" rel="noopener">${link.label}</a>`)
+    .join("");
+  return `<p class="folder-play">${anchors}</p>`;
 }
 
 function folderBullets(bullets) {
@@ -121,7 +124,7 @@ function renderFolder(rootId, dataKey, orgLed = false) {
       </header>
       <div class="folder-grid${media ? "" : " is-textonly"}">
         <div class="folder-text">
-          ${folderLink(item.link)}
+          ${folderLinks(item.links)}
           ${paragraphs(item.description)}
           ${folderBullets(item.bullets)}
           ${skillBoxes(item.skills)}
