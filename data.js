@@ -208,6 +208,36 @@ const SITE_DATA = {
         { src: "assets/mirrormonsterDumpster.png" },
         { src: "assets/mirrormonsterBakery.png", wide: true }
       ]
+    },
+    {
+      role: "Blinn Phong Ray Tracer",
+      org: "CSE 457 project for UW",
+      when: "",
+      links: [
+        { href: "https://github.com/Claohuu/Blinn-Phong-Ray-Tracer-CSE457", label: "View the code on GitHub" }
+      ],
+      description: "A Blinn-Phong shader and recursive ray tracer supporting direct lighting, reflection, and refraction, written for the University of Washington's CSE 457 computer graphics course. The repository holds the full course project, but my work here is two files: the shader and the tracer itself. The starter code from course staff is for visualization and grading, but the core of the ray tracer was created by me.",
+      bullets: [
+        "Implemented the Blinn-Phong reflection model as a per-pixel HLSL fragment shader, summing ambient, diffuse, and specular contributions across point lights.",
+        "Added distance attenuation of 1 / (1 + r²) per light, replacing the starter code's unattenuated falloff with a smooth drop-off over distance.",
+        "Used the half-vector specular term ks(N · H)^ns rather than a full mirror-reflection vector, which is cheaper and avoids the artifacts of pure Phong specular.",
+        "Wrote the recursive trace routine, composing final color as direct lighting plus reflection and refraction contributions weighted by ks and kt.",
+        "Cast shadow rays toward each light with thin-shell color filtering, so light crossing a transparent surface picks up that surface's color instead of being fully blocked or fully passed.",
+        "Derived refracted directions from Snell's law, and handled total internal reflection by reflecting when the radicand goes negative rather than emitting a NaN direction.",
+        "Verified against the course's image comparison tool, passing the direct lighting, reflection, and refraction scenes at over 95% pixel match."
+      ],
+      skills: {
+        Languages: ["C#", "HLSL"],
+        Topics: ["Ray tracing", "Blinn-Phong shading", "Snell's law"],
+        Engine: ["Unity"]
+      },
+      shotsLayout: "grid",
+      images: [
+        { src: "assets/raytrace3.png" },
+        { src: "assets/raytrace4.png" },
+        { src: "assets/rayTrace1.png" },
+        { src: "assets/raytrace2.png" }
+      ]
     }
   ],
 
