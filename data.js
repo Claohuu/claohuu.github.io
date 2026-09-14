@@ -179,6 +179,35 @@ const SITE_DATA = {
         { src: "assets/singularitunaFishing.png" },
         { src: "assets/singularitunaFish.png", wide: true }
       ]
+    },
+    {
+      role: "Mirror Monster",
+      org: "December 2025 – March 2026",
+      when: "",
+      links: [
+        { href: "https://ilazer.itch.io/mirror-monster", label: "▶ Play it on itch.io" },
+        { href: "https://github.com/iLazer/Mirror-Monster", label: "View the code on GitHub" }
+      ],
+      description: "You're working the late shift at a bakery with a list of tasks to finish before morning. Something else is in here with you, a monster you can't see directly, only catch in reflections. Use the mirrors scattered around the bakery to track it while you knead, bake and haul out the trash, and try not to walk straight into it.",
+      bullets: [
+        "Co-developed a first-person horror-mystery in Unity built around an enemy that exists only in reflections. Geometry had to stay consistent with the player's real-time viewpoint rather than falling back on baked or static reflection probes.",
+        "Engineered a custom ray tracing system in C# to compute mirror reflections, correcting the perspective distortion introduced by off-axis viewing angles and non-coplanar mirror surfaces.",
+        "Randomized the monster's spawn placement across a pool of candidate points, gated by a minimum-distance check against the player so it can never materialize on top of you, with failing candidates rejected and re-rolled.",
+        "Built the bakery task loop behind a shared interactable interface, with the dough station, oven, table, trashcan and dumpster each implementing their own completion logic.",
+        "Produced all 2D art, the player model, and its animations."
+      ],
+      skills: {
+        Languages: ["C#"],
+        Engine: ["Unity"],
+        Tools: ["Adobe Suite"]
+      },
+      youtube: "-g7lSmiqep4",
+      shotsLayout: "grid",
+      images: [
+        { src: "assets/MirrorMonster1.png" },
+        { src: "assets/mirrormonsterDumpster.png" },
+        { src: "assets/mirrormonsterBakery.png", wide: true }
+      ]
     }
   ],
 
