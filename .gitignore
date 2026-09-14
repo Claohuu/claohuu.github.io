@@ -1,0 +1,3 @@
+# Source videos stay local — they exceed GitHub's 100MB file limit.
+# Demos are embedded from YouTube instead.
+assets/*.mp4

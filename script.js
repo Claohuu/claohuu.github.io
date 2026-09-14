@@ -76,6 +76,17 @@ function folderVideo(src) {
   return `<video class="folder-video" controls preload="metadata" playsinline><source src="${src}" type="video/mp4"></video>`;
 }
 
+/* YouTube rather than a local file: the source demos run well past GitHub's
+   100MB limit, and Pages cannot serve Git LFS objects */
+function folderEmbed(id, label) {
+  if (!id) return "";
+  return `<div class="folder-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1&vq=hd1080"
+              title="${label} gameplay demo" loading="lazy" allowfullscreen
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>`;
+}
+
 function paragraphs(description) {
   const parts = Array.isArray(description) ? description : [description];
   return parts.map(part => `<p>${part}</p>`).join("");
@@ -100,7 +111,7 @@ function renderFolder(rootId, dataKey, orgLed = false) {
     const shots = item.images && item.images.length
       ? folderShots(item.images, heading(item), item.smallShots, item.shotsLayout)
       : "";
-    const media = folderVideo(item.video) + shots;
+    const media = folderEmbed(item.youtube, heading(item)) + folderVideo(item.video) + shots;
     return `
     <article class="folder-panel${i === 0 ? " is-active" : ""}" id="${dataKey}-panel-${i}" role="tabpanel">
       <header class="folder-head">

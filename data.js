@@ -172,7 +172,7 @@ const SITE_DATA = {
         Engine: ["Unity", "Input System", "Shader Graph"],
         Systems: ["State machines", "ScriptableObjects", "Dialogue trees"]
       },
-      video: "assets/singularituna-demo.mp4",
+      youtube: "P2lRF7jyM3I",
       shotsLayout: "grid",
       images: [
         { src: "assets/singularitunaFullShot.png" },
