@@ -490,6 +490,42 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
 
 .folder-text p { color: var(--text-muted); margin: 0 0 16px; }
 
+.folder-play {
+  margin: 0 0 16px;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+}
+
+.folder-bullets {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-muted);
+}
+
+.folder-bullets li { margin-bottom: 9px; }
+.folder-bullets li::marker { color: var(--accent); }
+
+/* projects run long, so their copy sits a step smaller than the other folders */
+#projects-folder .folder-text p,
+#projects-folder .folder-bullets { font-size: 0.82rem; }
+
+.folder-media {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.folder-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--panel-line);
+  border-radius: 2px;
+  background: var(--sunken);
+}
+
+.folder-shots.is-grid .folder-shot.is-wide { grid-column: 1 / -1; }
+
 .folder-text a {
   color: var(--accent);
   text-decoration: underline;

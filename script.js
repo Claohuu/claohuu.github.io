@@ -61,6 +61,21 @@ function folderShots(images, label, small, layout) {
   return `<div class="${classes.filter(Boolean).join(" ")}">${frames}</div>`;
 }
 
+function folderLink(link) {
+  if (!link) return "";
+  return `<p class="folder-play"><a href="${link.href}" target="_blank" rel="noopener">${link.label}</a></p>`;
+}
+
+function folderBullets(bullets) {
+  if (!bullets || !bullets.length) return "";
+  return `<ul class="folder-bullets">${bullets.map(point => `<li>${point}</li>`).join("")}</ul>`;
+}
+
+function folderVideo(src) {
+  if (!src) return "";
+  return `<video class="folder-video" controls preload="metadata" playsinline><source src="${src}" type="video/mp4"></video>`;
+}
+
 function paragraphs(description) {
   const parts = Array.isArray(description) ? description : [description];
   return parts.map(part => `<p>${part}</p>`).join("");
@@ -81,22 +96,30 @@ function renderFolder(rootId, dataKey, orgLed = false) {
             aria-selected="${i === 0}" aria-controls="${dataKey}-panel-${i}">${heading(item)}</button>
   `).join("");
 
-  const panels = items.map((item, i) => `
+  const panels = items.map((item, i) => {
+    const shots = item.images && item.images.length
+      ? folderShots(item.images, heading(item), item.smallShots, item.shotsLayout)
+      : "";
+    const media = folderVideo(item.video) + shots;
+    return `
     <article class="folder-panel${i === 0 ? " is-active" : ""}" id="${dataKey}-panel-${i}" role="tabpanel">
       <header class="folder-head">
         <h2>${heading(item)}</h2>
         <div class="folder-org">${subhead(item)}</div>
         <div class="folder-when">${item.when}</div>
       </header>
-      <div class="folder-grid${item.images && item.images.length ? "" : " is-textonly"}">
+      <div class="folder-grid${media ? "" : " is-textonly"}">
         <div class="folder-text">
+          ${folderLink(item.link)}
           ${paragraphs(item.description)}
+          ${folderBullets(item.bullets)}
           ${skillBoxes(item.skills)}
         </div>
-        ${item.images && item.images.length ? folderShots(item.images, heading(item), item.smallShots, item.shotsLayout) : ""}
+        ${media ? `<div class="folder-media">${media}</div>` : ""}
       </div>
     </article>
-  `).join("");
+  `;
+  }).join("");
 
   const arrows = items.length > 1
     ? `<button class="folder-arrow prev" type="button" aria-label="Previous">${TRIANGLE}</button>

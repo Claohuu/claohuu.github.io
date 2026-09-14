@@ -150,37 +150,35 @@ const SITE_DATA = {
 
   projects: [
     {
-      role: "Ray Tracer",
-      org: "Personal project",
+      role: "Singularituna",
+      org: "Built in 3 days for the Nocturne Mini Jam",
       when: "2026",
-      description: "What you built, what problem it solves, and the part you're most proud of.",
-      skills: {
-        Languages: ["C++"],
-        Topics: ["Path tracing", "BVH", "Linear algebra"]
+      link: {
+        href: "https://ilazer.itch.io/fishvent-horizon",
+        label: "▶ Play it on itch.io"
       },
-      images: []
-    },
-    {
-      role: "Shader Playground",
-      org: "Personal project",
-      when: "2025",
-      description: "What you built, what problem it solves, and the part you're most proud of.",
+      description: "Adrift in deep space, your ship is sliding toward a black hole. You are low on fuel and starving, until you notice the eerie fish swarming the hull are both fuel and food. Burn them to buy distance, cook them to stay alive. The closer the black hole drags you, the stranger the catch gets: fish that turn invisible, teleport out of your aim, or fight back. Spear what you can, feed what's left to the reactor, and see how long you last.",
+      bullets: [
+        "Built the spearfishing loop as a four-state machine — held, throwing, thrown, retracting — driving a physics-based spear through Unity's Input System, with event hooks on hit, miss and retraction so audio, VFX and catch resolution stay decoupled from throw logic.",
+        "Composed 15+ modular behavior components (invisibility, teleportation, stun response, flee-on-approach, proximity sensing, random targeting, bounds re-entry) layered onto five species, so alien abilities mix compositionally rather than forcing a subclass per fish.",
+        "Built the scene flow moving the player between the main menu, the ship interior and the fishing station.",
+        "Designed the interaction layer as a self-registering component pattern: every interactable aboard the ship adds itself to a shared registry on spawn and removes itself on destroy, letting one player-side dispatcher drive whatever is in range without hard references.",
+        "Wired hunger and fuel as competing resource drains, with a shared item pipeline routing a single catch either to the stove for food or the reactor for fuel.",
+        "Hooked up branching dialogue with interpreter jumps between nodes and a typewriter reveal synced to blip audio.",
+        "Scoped, built and shipped in 72 hours."
+      ],
       skills: {
-        Languages: ["GLSL", "JavaScript"],
-        Tools: ["WebGL", "Three.js"]
+        Languages: ["C#"],
+        Engine: ["Unity", "Input System", "Shader Graph"],
+        Systems: ["State machines", "ScriptableObjects", "Dialogue trees"]
       },
-      images: []
-    },
-    {
-      role: "Mesh Generator",
-      org: "Course project",
-      when: "2025",
-      description: "What you built, what problem it solves, and the part you're most proud of.",
-      skills: {
-        Languages: ["Python"],
-        Topics: ["Procedural geometry", "Marching cubes"]
-      },
-      images: []
+      video: "assets/singularituna-demo.mp4",
+      shotsLayout: "grid",
+      images: [
+        { src: "assets/singularitunaFullShot.png" },
+        { src: "assets/singularitunaFishing.png" },
+        { src: "assets/singularitunaFish.png", wide: true }
+      ]
     }
   ],
 
