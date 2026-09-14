@@ -175,9 +175,9 @@ const SITE_DATA = {
       youtube: "P2lRF7jyM3I",
       shotsLayout: "grid",
       images: [
-        { src: "assets/singularitunaFish.png" },
+        { src: "assets/singularitunaFullShot.png" },
         { src: "assets/singularitunaFishing.png" },
-        { src: "assets/singularitunaFullShot.png", wide: true }
+        { src: "assets/singularitunaFish.png", wide: true }
       ]
     }
   ],
