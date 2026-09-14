@@ -496,9 +496,11 @@ a.game-card:hover .caption h3 { color: var(--accent-2); }
   font-size: 0.82rem;
 }
 
+/* the translucent rule separates the blurb above from the build notes below */
 .folder-bullets {
   margin: 0;
-  padding-left: 18px;
+  padding: 18px 0 0 18px;
+  border-top: 1px solid rgba(236, 239, 238, 0.14);
   color: var(--text-muted);
 }
 
