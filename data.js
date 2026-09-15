@@ -135,8 +135,8 @@ const SITE_DATA = {
     },
     {
       role: "Mirror Monster",
-      org: "December 2025 – March 2026",
-      when: "",
+      org: "",
+      when: "December 2025 – March 2026",
       links: [
         { href: "https://ilazer.itch.io/mirror-monster", label: "▶ Play it on itch.io" },
         { href: "https://github.com/iLazer/Mirror-Monster", label: "View the code on GitHub" }
