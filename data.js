@@ -104,7 +104,7 @@ const SITE_DATA = {
   projects: [
     {
       role: "Singularituna",
-      org: "Built in 3 days for the Nocturne Mini Jam",
+      org: "",
       when: "2026",
       links: [
         { href: "https://ilazer.itch.io/fishvent-horizon", label: "▶ Play it on itch.io" },

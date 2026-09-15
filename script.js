@@ -96,8 +96,8 @@ function renderFolder(rootId, dataKey, orgLed = false) {
     <article class="folder-panel${i === 0 ? " is-active" : ""}" id="${dataKey}-panel-${i}" role="tabpanel">
       <header class="folder-head">
         <h2>${heading(item)}</h2>
-        <div class="folder-org">${subhead(item)}</div>
-        <div class="folder-when">${item.when}</div>
+        ${subhead(item) ? `<div class="folder-org">${subhead(item)}</div>` : ""}
+        ${item.when ? `<div class="folder-when">${item.when}</div>` : ""}
       </header>
       <div class="folder-grid${media ? "" : " is-textonly"}">
         <div class="folder-text">
