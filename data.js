@@ -23,7 +23,7 @@ const SITE_DATA = {
     {
       role: "Gameplay Programming Intern",
       org: "Aggro Crab",
-      when: "Jun 2026 – Oct 2026",
+      when: "Jun 2026 – Sep 2026",
       description: [
         "Sole programming intern on an unannounced title. Designed a centralized entity manager that distributes visibility checks across staggered coroutine cycles, amortizing per-entity work over successive frames for a 25% increase in framerate.",
         "Built a custom Unity editor tool that procedurally places prefabs along a spline, sampling positions at configurable density with surface-snapping raycasts and gizmo previews, replacing manual hand-placement.",
