@@ -169,16 +169,52 @@ function renderFolder(rootId, dataKey, orgLed = false) {
 }
 
 function renderArt() {
-  const grid = document.getElementById("art-grid");
-  if (!grid || !SITE_DATA.art) return;
-  grid.innerHTML = SITE_DATA.art.map(piece => `
-    <figure>
-      <div class="thumb">
-        ${piece.image ? `<img src="${piece.image}" alt="${piece.title}">` : placeholderThumb(piece.title || "Art image")}
+  const gallery = document.getElementById("art-grid");
+  if (!gallery || !SITE_DATA.art) return;
+  gallery.innerHTML = SITE_DATA.art.map(entry => {
+    const cap = entry.maxHeight ? ` style="max-height: ${entry.maxHeight}px"` : "";
+    return `
+    <figure class="art-piece${entry.captionBeside ? " is-beside" : ""}">
+      <div class="art-shots">
+        ${entry.images.map(src => `<img src="${src}" alt="${entry.caption}"${cap} loading="lazy">`).join("")}
       </div>
-      <figcaption>${piece.title} — ${piece.caption}</figcaption>
+      <figcaption>${entry.caption}</figcaption>
     </figure>
-  `).join("");
+  `;
+  }).join("");
+}
+
+/* click any piece to see it full size */
+function initLightbox() {
+  if (!document.getElementById("art-grid")) return;
+
+  const box = document.createElement("div");
+  box.className = "lightbox";
+  box.hidden = true;
+  box.innerHTML = `<img alt="">`;
+  document.body.appendChild(box);
+  const full = box.querySelector("img");
+
+  function close() {
+    box.hidden = true;
+    document.body.classList.remove("no-scroll");
+  }
+
+  document.addEventListener("click", event => {
+    const shot = event.target.closest(".art-shots img");
+    if (shot) {
+      full.src = shot.src;
+      full.alt = shot.alt;
+      box.hidden = false;
+      document.body.classList.add("no-scroll");
+      return;
+    }
+    if (!box.hidden) close();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape" && !box.hidden) close();
+  });
 }
 
 function initScrollCue() {
@@ -205,5 +241,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFolder("projects-folder", "projects");
   renderFolder("volunteering-folder", "volunteering", true);
   renderArt();
+  initLightbox();
   initScrollCue();
 });

@@ -254,11 +254,30 @@ const SITE_DATA = {
     }
   ],
 
-  // Shown on art.html as a grid.
-  // image: path to a photo in /assets (e.g. "assets/art/piece-1.jpg")
+  /* Shown on art.html. Each entry is one row of the gallery: list one image,
+     or several to sit them side by side under a single shared caption. */
   art: [
-    { title: "Piece title", caption: "medium, year", image: "" },
-    { title: "Piece title", caption: "medium, year", image: "" },
-    { title: "Piece title", caption: "medium, year", image: "" }
+    {
+      images: ["assets/zelda.png"],
+      caption: "Zelda Breath of the Wild fanart"
+    },
+    {
+      images: ["assets/JesterConcept.png", "assets/JesterTposes.png"],
+      caption: "Jester concept art and T poses for the Boss Rush game jam"
+    },
+    {
+      images: ["assets/kazuha.png"],
+      caption: "Personal art of an original character"
+    },
+    {
+      images: ["assets/plein air.jpg"],
+      caption: "Watercolor plein air"
+    },
+    {
+      images: ["assets/playing cards.jpg"],
+      caption: "Playing cards built around the Chinese value of letting nothing go to waste. Each dish shows another way to use what is left of a single fish, with the numbers carrying their own symbolism.",
+      captionBeside: true,
+      maxHeight: 700
+    }
   ]
 };
