@@ -259,7 +259,8 @@ const SITE_DATA = {
   art: [
     {
       images: ["assets/zelda.png"],
-      caption: "Zelda Breath of the Wild fanart"
+      caption: "Zelda Breath of the Wild fanart",
+      maxHeight: 500
     },
     {
       images: ["assets/JesterConcept.png", "assets/JesterTposes.png"],
