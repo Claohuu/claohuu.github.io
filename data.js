@@ -6,53 +6,6 @@
 
 const SITE_DATA = {
 
-  // Shown in the games row on the home page.
-  // image: path to a photo in /assets (e.g. "assets/games/hollow-knight.jpg")
-  /* caption is an optional personal line — fill it in or leave it empty.
-     crop shifts which part of the art survives the square crop; lower
-     percentages keep more of the top, where cover logos usually sit. */
-  games: [
-    {
-      title: "Valorant",
-      developer: "Riot Games",
-      caption: "",
-      image: "assets/valorant.jpg",
-      crop: "center 75%",
-      link: "https://playvalorant.com/en-us/"
-    },
-    {
-      title: "Death Stranding",
-      developer: "Kojima Productions",
-      caption: "",
-      image: "assets/deathStranding.jpg",
-      crop: "center 40%",
-      link: "https://www.kojimaproductions.jp/index.php/en/death-stranding-dc"
-    },
-    {
-      title: "Peak",
-      developer: "Aggro Crab and Landfall Games",
-      caption: "",
-      image: "assets/peak.jpg",
-      crop: "center center",
-      link: "https://peakpeakpeak.com/"
-    },
-    {
-      title: "Firewatch",
-      developer: "Campo Santo",
-      caption: "",
-      image: "assets/firewatch.jpg",
-      crop: "center top",
-      link: "https://www.firewatchgame.com/"
-    },
-    {
-      title: "The Forest",
-      developer: "Endnight Games",
-      caption: "",
-      image: "assets/theforest.avif",
-      link: "https://endnightgames.com/"
-    }
-  ],
-
   /* ------------------------------------------------------------
      experience / projects / volunteering all use the same shape.
      Each entry becomes one manila tab in the folder on its page:

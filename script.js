@@ -15,29 +15,6 @@ function highlightActiveNav() {
   });
 }
 
-function placeholderThumb(label) {
-  return `<div class="placeholder-note">${label}<br>Add an image path in data.js</div>`;
-}
-
-function renderGames() {
-  const row = document.getElementById("games-row");
-  if (!row || !SITE_DATA.games) return;
-  row.innerHTML = SITE_DATA.games.map(game => {
-    const inner = `
-      <div class="thumb">
-        ${game.image ? `<img src="${game.image}" alt="${game.title}"${game.crop ? ` style="object-position: ${game.crop}"` : ""}>` : placeholderThumb(game.title || "Game image")}
-      </div>
-      <div class="caption">
-        <h3>${game.title}</h3>
-        <p class="dev">${game.developer}</p>
-        ${game.caption ? `<p>${game.caption}</p>` : ""}
-      </div>
-    `;
-    return game.link
-      ? `<a class="game-card" href="${game.link}" target="_blank" rel="noopener">${inner}</a>`
-      : `<div class="game-card">${inner}</div>`;
-  }).join("");
-}
 
 function skillBoxes(skills) {
   if (!skills) return "";
@@ -236,7 +213,6 @@ function initScrollCue() {
 
 document.addEventListener("DOMContentLoaded", () => {
   highlightActiveNav();
-  renderGames();
   renderFolder("experience-folder", "experience", true);
   renderFolder("projects-folder", "projects");
   renderFolder("volunteering-folder", "volunteering", true);
