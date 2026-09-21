@@ -103,6 +103,31 @@ const SITE_DATA = {
 
   projects: [
     {
+      role: "terrain-simulator",
+      org: "",
+      when: "2026",
+      links: [
+        { href: "https://claohuu.github.io/terrain-erosion/", label: "▶ Test terrain-simulator here" },
+        { href: "https://github.com/Claohuu/terrain-erosion", label: "View the code on GitHub" }
+      ],
+      description: "A terrain generator that simulates hydraulic erosion in C++ and runs in the browser through WebAssembly.",
+      bullets: [
+        "Compiled a C++ simulation core to WebAssembly with Emscripten and drove it from a React and Vite interface exposing 10 live simulation parameters.",
+        "Cut erosion runtime 35% across four measured optimizations, including precomputed kernel offsets and a spawn margin invariant that removed bounds checking from the inner loop.",
+        "Implemented Beyer's droplet erosion model, simulating up to 500,000 particles that sample terrain gradients by bilinear interpolation and scale sediment capacity by velocity, water volume and slope.",
+        "Generated base terrain with fractal Brownian motion over value noise, using smoothstep weights to remove derivative discontinuities at lattice boundaries.",
+        "Verified determinism, numerical stability and memory safety with 27 native C++ assertions run against every brush radius."
+      ],
+      skills: {
+        Languages: ["C++", "JavaScript"],
+        Toolchain: ["React", "Vite", "Emscripten", "WebAssembly"],
+        Systems: ["Particle simulation", "Fractal noise", "Bilinear interpolation", "Performance profiling"]
+      },
+      images: [
+        { src: "assets/terrain.png" }
+      ]
+    },
+    {
       role: "Singularituna",
       org: "",
       when: "2026",
