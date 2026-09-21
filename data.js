@@ -124,7 +124,7 @@ const SITE_DATA = {
         Systems: ["Particle simulation", "Fractal noise", "Bilinear interpolation", "Performance profiling"]
       },
       images: [
-        { src: "assets/terrain.png" }
+        { src: "assets/terrain.png", wide: true }
       ]
     },
     {
